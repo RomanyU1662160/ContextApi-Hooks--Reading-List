@@ -2,15 +2,8 @@ import React, { createContext, useState } from "react";
 
 export const BooksContext = createContext();
 
-const initBook = {
-  id: "1",
-  title: "book1",
-  author: "Romany",
-  date: "10-102010",
-  read: false
-};
 const BooksContextProvider = props => {
-  const [books, setBooks] = useState([initBook]);
+  const [books, setBooks] = useState([]);
 
   const addBook = book => {
     setBooks([...books, book]);
