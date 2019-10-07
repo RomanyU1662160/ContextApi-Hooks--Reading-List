@@ -2,15 +2,8 @@ import React, { createContext, useState } from "react";
 
 export const BooksContext = createContext();
 
-const initBook = {
-  id: "1",
-  title: "book1",
-  author: "Romany",
-  date: "10-102010",
-  read: false
-};
 const BooksContextProvider = props => {
-  const [books, setBooks] = useState([initBook]);
+  const [books, setBooks] = useState([]);
 
   const addBook = book => {
     setBooks([...books, book]);
@@ -21,8 +14,8 @@ const BooksContextProvider = props => {
   };
 
   const toggleRead = id => {
-    const newBooks = books.map(book => {
-      if (book.id == id) {
+    books.map(book => {
+      if (book.id === id) {
         book.read = !book.read;
         return setBooks([...books]);
       }
