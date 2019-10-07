@@ -1,6 +1,7 @@
 import React, { useContext, useState } from "react";
 import { BooksContext } from "../contexts/BooksContext";
 import uuid from "uuid";
+import { Button } from "./styled/Button";
 
 const AddBookForm = () => {
   const { addBook } = useContext(BooksContext);
@@ -57,9 +58,10 @@ const AddBookForm = () => {
             onChange={e => handleOnChange(e)}
           />
         </div>
-        <button type='submit' className='btn btn-info float-right'>
-          Add New Book
-        </button>
+
+        <Button primary className='btn  float-right'>
+          Add New book
+        </Button>
       </form>
     </>
   );

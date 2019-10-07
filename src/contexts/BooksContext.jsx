@@ -14,8 +14,8 @@ const BooksContextProvider = props => {
   };
 
   const toggleRead = id => {
-    const newBooks = books.map(book => {
-      if (book.id == id) {
+    books.map(book => {
+      if (book.id === id) {
         book.read = !book.read;
         return setBooks([...books]);
       }
